@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function my_module_block_info() {
+	$blocks['my_module'] = array(
+		'info' => t('my_module'),
+		'cache' => DRUPAL_CACHE_PER_ROLE,
+		);
+	return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function my_module_block_view($delta = '') {
+	$block = array();
+	switch ($delta) {
+		case 'my_module':{
+		$block['subject'] = t('');
+		$block['content'] = my_module_block_contents($delta);
+			break;
+		}
+	}
+	return $block;
+}
+
+/**
+ * Implements hook_block_contents().
+ */
+function my_module_block_contents($delta) {
+	$html = "";
+	$html .= "Hongyu";
+	return $html;
+
+}
+
+?>
