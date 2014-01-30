@@ -30,9 +30,44 @@ function my_module_block_view($delta = '') {
  * Implements hook_block_contents().
  */
 function my_module_block_contents($delta) {
-	$html = "";
-	$html .= "Hongyu";
-	return $html;
+	
+
+	$html = '';
+	$html .= '
+		<h1>This is my profile.</h1>
+		<p>My name is Hongyu. I am 21 years old.</p>
+		<p>My favorite food is Dimsum.</p>
+		<p> <img border="0" src="http://upload.wikimedia.org/wikipedia/commons/e/ef/Dimsum-shanghai.JPG" alt="Dimsum" width="304" height="228"></p>
+	';
+	$dayofweek = rand(0,6);
+    $html .= "<p>";
+	if ($dayofweek == 0 ){
+            $html .= "Today is Monday, and I am happy";
+    }
+    else if ($dayofweek == 1) {
+            $html .= "Today is Tuesday, and I am happy";
+    }
+    else if ($dayofweek == 2) {
+             $html .= "Today is Wednesday, and I am happy";
+    }
+    else if ($dayofweek == 3) {
+             $html .= "Today is Thursday, and I am happy";
+    }
+    else if ($dayofweek == 4) {
+             $html .= "Today is Friday, and I am happy";
+    }
+    else if ($dayofweek == 5) {
+             $html .= "Today is Saturday, and I am happy";
+    }
+    else if ($dayofweek == 6) {
+             $html .= "Today is Sunday, and I am happy";
+    }
+    $html .="</p>";
+    
+    $html .="<p>End of the page.</p>";
+    
+    return $html;
+
 
 }
 
