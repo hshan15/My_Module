@@ -31,6 +31,7 @@ function my_module_block_view($delta = '') {
  */
 function my_module_block_contents($delta) {
 	
+	include "My_Module_Functions.php";
 
 	$html = '';
 	$html .= '
@@ -66,7 +67,19 @@ function my_module_block_contents($delta) {
     
     $html .="<p>End of the page.</p>";
     
+    $number = rand(2,10);
+    
+    $answer = square($number);
+    
+    $html .= "<p>The square of $number is $answer.</p>" ;
+    
+    $html .="<p>Bod made $100 today.</p>";
+    
+    
     return $html;
+
+
+
 
 
 }
